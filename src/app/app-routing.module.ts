@@ -25,6 +25,7 @@ const ROUTES: Routes = [
   {path:"adminPersonne",    component:  PersonneComponent},
   {path:"adminRdv",         component:  RdvComponent},
   {path:"adminUtilisateur", component:  UtilisateurComponent},
+ /* {path:"commercial-rdv", component: }*/
 
 
 

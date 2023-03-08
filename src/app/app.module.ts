@@ -15,6 +15,9 @@ import { PersonneComponent } from './components/admin/personne/personne.componen
 import { RdvComponent } from './components/admin/rdv/rdv.component';
 import { RouterModule, ROUTES } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
