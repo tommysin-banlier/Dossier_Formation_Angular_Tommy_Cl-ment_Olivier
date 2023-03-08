@@ -4,6 +4,6 @@ import { Utilisateur } from "../Utilisateur/utilisateur";
 
 export class Commercial extends Utilisateur {
 
-    rdvs!: Rdv[];
+    rdvsC!: Rdv[];
    
 }
