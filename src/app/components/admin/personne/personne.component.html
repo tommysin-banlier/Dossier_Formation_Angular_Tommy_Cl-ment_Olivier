@@ -1,1 +1,43 @@
-<p>personne works!</p>
+<h4>Liste des Personnes dans la base de donnée</h4>
+
+
+<table class="table">
+        <thead class="thead-light">
+          <tr>
+            <td scope="col">Id</td>
+            <td scope="col">Nom</td>
+            <td scope="col">Prenom</td>
+            <td scope="col">Age</td>
+            <td scope="col">Email</td>
+            <td scope="col">Modifier</td>
+            <td scope="col">Supprimer</td>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let personne of personnes">
+                <td>{{personne.id}}</td>
+                <td>{{personne.nom}}</td>
+                <td>{{personne.prenom}}</td>
+                <td>{{personne.age}}</td>
+                <td>{{personne.email}}</td>                
+                <td><button (click)="modifier(personne.id)" class="btn btn-warning">Modifier</button></td>
+                <td><button (click)="enlever(personne.id)" class="btn btn-danger">Supprimer</button></td>
+            </tr>
+        </tbody>
+      </table>
+      <hr>
+      <br>
+
+      <h1>Modification ou ajout de la personne</h1>
+
+      <form  (ngSubmit)="inserer()"  class="form-group mx-sm-3 mb-2">
+
+        Nom : <input type="text" name="nom" [(ngModel)]="personneFormulaire.nom">
+        Prenom : <input type="text" name="prenom" [(ngModel)]="personneFormulaire.prenom">
+        Age : <input type="text" name="age" [(ngModel)]="personneFormulaire.age">
+        Email : <input type="text" name="email" [(ngModel)]="personneFormulaire.email">
+        <button type="submit" class="btn btn-info">Ajouter</button>
+    </form>
+
+
+    
