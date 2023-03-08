@@ -1,1 +1,47 @@
-<p>commercial works!</p>
+<!--
+
+<form (ngSubmit)="inserer()">
+    Nom:<input type="datetime-local" name="nom" [(ngModel)]="commercialFormulaire.nom"><br>
+    Prenom:<input type="text" name="prenom" [(ngModel)]="commercialFormulaire.prenom"><br>
+    Age:<input type="number" name="age" [(ngModel)]="commercialFormulaire.age"><br>
+    email:<input type="text" name="email" [(ngModel)]="commercialFormulaire.email"><br>
+    Username:<input type="text" name="username" [(ngModel)]="commercialFormulaire.username"><br>
+    Rendez-vous:<input type="text" name="commentaire" [(ngModel)]="commercialFormulaire.commentaire"><br>
+    <select name="idrdv" [(ngModel)]="idrdv">
+        <option *ngFor="let rdv of rdvs" value="{{rdv.id}}">{{rdv.id}}</option>
+    </select>
+
+<button type="submit">Ajouter</button>
+</form>
+
+-->
+
+<table class="table table-striped table-bordered text-center">
+    <tr>
+        <td>Id</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Age</td>
+        <td>email</td>
+        <td>Username</td>
+        <td>Rendez-vous</td>
+        <td>Modifier</td>
+        <td>Supprimer</td>
+
+    </tr>
+    <tr *ngFor="let commercial of commercials">
+        <td><!--{{commercial.id}}!--></td>
+        <td><!--{{commercial.nom}}!--></td>
+        <td><!--{{commercial.prenom}}!--></td>
+        <td><!--{{commercial.age}}!--></td>
+        <td><!--{{commercial.email}}!--></td>
+        <td><!--{{commercial.username}}!--></td>
+        <td><a [routerLink]="['/commercial-rdv']"><button class="btn">Rendez-vous</button></a></td>
+        <td><button class="btn btn-warning" (click)="modifier(commercial.id)">Modifier</button></td>
+        <td><button class="btn btn-danger" (click)="enlever(commercial.id)">Supprimer</button></td>
+       
+    
+    </tr>
+
+</table>
+

@@ -18,6 +18,10 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
+import { RoleComponent } from './components/admin/role/role.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     ParticipantComponent,
     PersonneComponent,
     RdvComponent,
-    HomeComponent
+    HomeComponent,
+    RoleComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
