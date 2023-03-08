@@ -15,8 +15,10 @@ import { PersonneComponent } from './components/admin/personne/personne.componen
 import { RdvComponent } from './components/admin/rdv/rdv.component';
 import { RouterModule, ROUTES } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RoleComponent } from './components/admin/role/role.component';
 
 
 @NgModule({
@@ -32,14 +34,18 @@ import { FormsModule } from '@angular/forms';
     ParticipantComponent,
     PersonneComponent,
     RdvComponent,
-    HomeComponent
+    HomeComponent,
+    RoleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule,
+
     HttpClientModule,
+    FormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ import { PaiementComponent } from './components/admin/paiement/paiement.componen
 import { ParticipantComponent } from './components/admin/participant/participant.component';
 import { PersonneComponent } from './components/admin/personne/personne.component';
 import { RdvComponent } from './components/admin/rdv/rdv.component';
+import { RoleComponent } from './components/admin/role/role.component';
 import { UtilisateurComponent } from './components/admin/utilisateur/utilisateur.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -25,7 +26,12 @@ const ROUTES: Routes = [
   {path:"adminPersonne",    component:  PersonneComponent},
   {path:"adminRdv",         component:  RdvComponent},
   {path:"adminUtilisateur", component:  UtilisateurComponent},
+
  /* {path:"commercial-rdv", component: }*/
+
+  {path:"adminRole", component:  RoleComponent},
+
+
 
 
 

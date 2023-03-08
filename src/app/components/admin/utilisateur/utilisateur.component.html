@@ -1,1 +1,43 @@
-<p>utilisateur works!</p>
+<h4>Liste des Utilisateurs dans la base de donnée</h4>
+
+
+<table class="table">
+        <thead class="thead-light">
+          <tr>
+            <td scope="col">Id</td>
+            <td scope="col">Nom</td>
+            <td scope="col">Prenom</td>
+            <td scope="col">Age</td>
+            <td scope="col">Email</td>
+            <td scope="col">Username</td>
+            <td scope="col">Modifier</td>
+            <td scope="col">Supprimer</td>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let utilisateur of utilisateurs">
+                <td>{{utilisateur.id}}</td>
+                <td>{{utilisateur.nom}}</td>
+                <td>{{utilisateur.prenom}}</td>
+                <td>{{utilisateur.age}}</td>
+                <td>{{utilisateur.email}}</td>
+                <td>{{utilisateur.username}}</td>                
+                <td><button (click)="modifier(utilisateur.id)" class="btn btn-warning">Modifier</button></td>
+                <td><button (click)="enlever(utilisateur.id)" class="btn btn-danger">Supprimer</button></td>
+            </tr>
+        </tbody>
+      </table>
+      <hr>
+      <br>
+
+      <h1>Modification ou ajout de l'Utilisateur</h1>
+
+      <form  (ngSubmit)="inserer()"  class="form-group mx-sm-3 mb-2">
+
+        Nom : <input type="text" name="nom" [(ngModel)]="utilisateurFormulaire.nom">
+        Prenom : <input type="text" name="prenom" [(ngModel)]="utilisateurFormulaire.prenom">
+        Age : <input type="text" name="age" [(ngModel)]="utilisateurFormulaire.age">
+        Email : <input type="text" name="email" [(ngModel)]="utilisateurFormulaire.email">
+        Username : <input type="text" name="username" [(ngModel)]="utilisateurFormulaire.username">
+        <button type="submit" class="btn btn-info">Ajouter</button>
+    </form>
