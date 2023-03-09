@@ -31,7 +31,10 @@ export class PaiementComponent implements OnInit {
 
   inserer() {
     this.paiementService.inserer(this.paiementFormulaire).subscribe(
-      response => this.chercherAll()
+      response => {
+        this.chercherAll();
+        this.paiementFormulaire = new Paiement;
+      }
     )
   }
 

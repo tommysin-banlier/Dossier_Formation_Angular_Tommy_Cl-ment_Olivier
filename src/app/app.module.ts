@@ -20,6 +20,8 @@ import { FormsModule } from '@angular/forms';
 
 
 import { RoleComponent } from './components/admin/role/role.component';
+import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
+import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { RoleComponent } from './components/admin/role/role.component';
     PersonneComponent,
     RdvComponent,
     HomeComponent,
-    RoleComponent
+    RoleComponent,
+    ParticipantsParFormationComponent,
+    PaiementsParFormationComponent
   ],
   imports: [
     BrowserModule,

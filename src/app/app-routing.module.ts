@@ -13,6 +13,8 @@ import { RdvComponent } from './components/admin/rdv/rdv.component';
 import { RoleComponent } from './components/admin/role/role.component';
 import { UtilisateurComponent } from './components/admin/utilisateur/utilisateur.component';
 import { HomeComponent } from './components/home/home.component';
+import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
+import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
 
 const ROUTES: Routes = [
 
@@ -30,8 +32,8 @@ const ROUTES: Routes = [
  /* {path:"commercial-rdv", component: }*/
 
   {path:"adminRole", component:  RoleComponent},
-
-
+  {path:"participants-par-formation/:id", component: ParticipantsParFormationComponent},
+  {path:"paiements-par-formation/:id", component: PaiementsParFormationComponent}
 
 
 
