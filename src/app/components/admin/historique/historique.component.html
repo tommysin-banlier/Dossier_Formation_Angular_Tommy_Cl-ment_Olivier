@@ -1,1 +1,43 @@
+<!--
+<form (ngSubmit)="inserer()">
+    Date:<input type="datetime-local" name="date" [(ngModel)]="historiqueFormulaire.date"><br>
+    Commentaire:<input type="text" name="commentaire" [(ngModel)]="historiqueFormulaire.commentaire"><br>
+    <!--Personne:<input type="text" name="prenom" [(ngModel)]="cit.prenom"><br> 
+    Personne:
+    <select name="personne" [(ngModel)]="personne.id">
+        <option *ngFor="let personne of personnes" value="{{personne.id}}">{{personne.nom}} {{personne.prenom}}</option>
+    </select> <br>
+    <!--Commercial:<input type="text" name="age" [(ngModel)]="cit.age"><br>
+    Commercial:
+    <select name="commercial" [(ngModel)]="commercial.id">
+        <option *ngFor="let commercial of commercials" value="{{commercial.id}}">{{commercial.nom}} {{commercial.prenom}}</option>
+    </select> <br>
 
+<button type="submit">Ajouter</button>
+</form>
+-->
+
+<table class="table table-striped table-bordered text-center">
+    <tr>
+        <td>Id</td>
+        <td>Date</td>
+        <td>Commentaire</td>
+        <td>Personne</td>
+        <td>Commercial</td>
+        <td>Modifier</td>
+        <td>Supprimer</td>
+
+    </tr>
+    <tr *ngFor="let historique of historiques">
+        <td>{{historique.id}}</td>
+        <td>{{historique.date | date: 'dd/MM/yyyy,HH:mm'}}</td>
+        <td>{{historique.commentaire }}</td>
+        <td> {{historique.personne.nom}} {{historique.personne.prenom}}</td>
+        <td> {{historique.commercial.nom}} {{historique.commercial.prenom}}</td>
+        <td><button class="btn btn-warning" (click)="modifier(historique.id)">Modifier</button></td>
+        <td><button class="btn btn-danger" (click)="enlever(historique.id)">Supprimer</button></td>
+       
+    
+    </tr>
+
+</table>
