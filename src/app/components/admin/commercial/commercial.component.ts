@@ -14,6 +14,9 @@ export class CommercialComponent implements OnInit {
 commercials!:Commercial[];
 commercialFormulaire!:Commercial;
 commercial!:Commercial;
+idrdv!: number;
+rdvs!:Rdv[];
+rdv!:Rdv;
 
 
 
@@ -38,19 +41,21 @@ ngOnInit()
 
   inserer()
   {
-    this.commercialService.inserer(this.commercialFormulaire).subscribe(
+    /*this.commercialService.inserer(this.commercialFormulaire).subscribe(
       response=>this.chercherAll()
-    )
+    )*/
 
-    /*let rdv:Rdv=new Rdv();
+    //let rdv:Rdv=new Rdv();
 
       this.commercialService.parId(this.idrdv).subscribe(
         response=>
-        {rdv=response;
+        {
+          //rdv=response;
       this.commercial.rdvs=rdv;
       this.commercialService.inserer(this.rdv).subscribe(
         response=>this.chercherAll()
-      )*/
+      }
+      )
 
   }
 

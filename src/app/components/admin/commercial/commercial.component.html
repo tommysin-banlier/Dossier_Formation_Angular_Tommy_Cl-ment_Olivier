@@ -1,5 +1,5 @@
-<!--
 
+<!--
 <form (ngSubmit)="inserer()">
     Nom:<input type="datetime-local" name="nom" [(ngModel)]="commercialFormulaire.nom"><br>
     Prenom:<input type="text" name="prenom" [(ngModel)]="commercialFormulaire.prenom"><br>
@@ -13,8 +13,8 @@
 
 <button type="submit">Ajouter</button>
 </form>
-
 -->
+
 
 <table class="table table-striped table-bordered text-center">
     <tr>
@@ -30,12 +30,12 @@
 
     </tr>
     <tr *ngFor="let commercial of commercials">
-        <td><!--{{commercial.id}}!--></td>
-        <td><!--{{commercial.nom}}!--></td>
-        <td><!--{{commercial.prenom}}!--></td>
-        <td><!--{{commercial.age}}!--></td>
-        <td><!--{{commercial.email}}!--></td>
-        <td><!--{{commercial.username}}!--></td>
+        <td>{{commercial.id}}</td>
+        <td>{{commercial.nom}}</td>
+        <td>{{commercial.prenom}}</td>
+        <td>{{commercial.age}}</td>
+        <td>{{commercial.email}}</td>
+        <td>{{commercial.username}}</td>
         <td><a [routerLink]="['/commercial-rdv']"><button class="btn">Rendez-vous</button></a></td>
         <td><button class="btn btn-warning" (click)="modifier(commercial.id)">Modifier</button></td>
         <td><button class="btn btn-danger" (click)="enlever(commercial.id)">Supprimer</button></td>

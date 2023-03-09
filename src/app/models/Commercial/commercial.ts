@@ -3,11 +3,7 @@ import { Rdv } from "../RDV/rdv";
 import { Utilisateur } from "../Utilisateur/utilisateur";
 
 export class Commercial extends Utilisateur {
-
-<<<<<<< HEAD
-    rdvsc!: Rdv[];
-=======
     rdvsC!: Rdv[];
->>>>>>> main
+    commentaire!:string;
    
 }
