@@ -1,5 +1,7 @@
 import { Component , OnInit } from '@angular/core';
+import { Role } from 'src/app/models/Role/role';
 import { Utilisateur } from 'src/app/models/Utilisateur/utilisateur';
+import { RoleService } from 'src/app/services/Role/role.service';
 import { UtilisateurService } from 'src/app/services/Utilisateur/utilisateur.service';
 
 @Component({
@@ -9,16 +11,21 @@ import { UtilisateurService } from 'src/app/services/Utilisateur/utilisateur.ser
 })
 export class UtilisateurComponent implements OnInit{
 
-  constructor(private utilisateurService:UtilisateurService){
+  constructor(private utilisateurService:UtilisateurService, private roleService:RoleService){
 
   }
 
   utilisateurs!:Utilisateur[];
   utilisateurFormulaire!:Utilisateur;
+  roleFormulaire!:Role;
+  roles!:Role[];
+  idrole!:number;
 
   ngOnInit(): void {
    this.chercherAll();
    this.utilisateurFormulaire = new Utilisateur;
+   this.chercherAllRole();
+   this.roleFormulaire = new Role;
   }
 
   chercherAll()
@@ -29,10 +36,24 @@ export class UtilisateurComponent implements OnInit{
     
   }
 
+  chercherAllRole()
+  {
+    this.roleService.chercherAll().subscribe(
+      response => this.roles = response
+    )
+  }
+
   inserer()
   {
-    this.utilisateurService.inserer(this.utilisateurFormulaire).subscribe(
-response => this.chercherAll()
+    let roleFormulaire:Role = new Role();
+    this.roleService.parId(this.idrole).subscribe(
+      response=>
+  {roleFormulaire=response;
+    this.utilisateurFormulaire.role=roleFormulaire;
+    this.utilisateurService.inserer(this.utilisateurFormulaire).subscribe();
+    this.utilisateurFormulaire = new Utilisateur;
+    this.chercherAll();
+  }
     )
   }
 

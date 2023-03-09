@@ -32,7 +32,10 @@ export class PersonneComponent implements OnInit {
   inserer()
   {
     this.personneService.inserer(this.personneFormulaire).subscribe(
-response => this.chercherAll()
+response => {
+  this.chercherAll();
+  this.personneFormulaire = new Personne;
+}
     )
   }
 

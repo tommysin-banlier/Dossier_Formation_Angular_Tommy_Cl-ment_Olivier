@@ -1,7 +1,46 @@
-<h4>Liste des Personnes dans la base de donnée</h4>
+<div class="row">
+  <div class="col">
+      <h1 style="margin : 15px">Menu des Personnes</h1>
+  </div>
+</div>
 
 
-<table class="table">
+<hr>
+
+
+<div class="row">
+  <div class="col">
+      <h3 style="margin-bottom : 20px">
+          Ajouter/Modifier
+      </h3>
+  </div>
+</div>
+
+<form  (ngSubmit)="inserer()"  class="form-group mx-sm-3 mb-2">
+
+  <table class="table">
+    <tr>
+      <td><label name="nom">Nom:</label></td>
+      <td><input type="text" name="nom" [(ngModel)]="personneFormulaire.nom"></td>
+      <td><label name="prenom">Prenom:</label></td>
+  <td><input type="text" name="prenom" [(ngModel)]="personneFormulaire.prenom"></td>
+    </tr>
+  <tr>
+    <td><label name="age">Age:</label></td>
+  <td><input type="text" name="age" [(ngModel)]="personneFormulaire.age"></td>
+  <td><label name="email">Email:</label></td>
+  <td><input type="text" name="email" [(ngModel)]="personneFormulaire.email"></td>
+    </tr>
+<tr>
+<td><button type="submit" class="btn btn-info">Valider</button></td>
+ </tr>
+</table>
+</form>
+
+
+
+
+<table class="table table-striped table-bordered text-center">
         <thead class="thead-light">
           <tr>
             <td scope="col">Id</td>
@@ -28,16 +67,7 @@
       <hr>
       <br>
 
-      <h1>Modification ou ajout de la personne</h1>
 
-      <form  (ngSubmit)="inserer()"  class="form-group mx-sm-3 mb-2">
-
-        Nom : <input type="text" name="nom" [(ngModel)]="personneFormulaire.nom">
-        Prenom : <input type="text" name="prenom" [(ngModel)]="personneFormulaire.prenom">
-        Age : <input type="text" name="age" [(ngModel)]="personneFormulaire.age">
-        Email : <input type="text" name="email" [(ngModel)]="personneFormulaire.email">
-        <button type="submit" class="btn btn-info">Ajouter</button>
-    </form>
-
+      
 
     
