@@ -16,6 +16,7 @@ export class HistoriqueComponent implements OnInit {
   historiqueFormulaire!:Historique;
   personne!:Personne;
   commercial!:Commercial;
+  
 
 
   ngOnInit()
