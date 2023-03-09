@@ -15,36 +15,37 @@
     </div>
 </div>
 
-<form (ngSubmit)="inserer()">                      <!--    class="form-inline"             -->
+
+<form (ngSubmit)="inserer()">                  
 
     <div class="form-group">
         <label for="nom">Nom : </label>
-        <input type="text" id="nom" name="nom" >    <!--                   [(ngModel)]="participantFormulaire.nom"           -->   
+        <input type="text" id="nom" name="nom" [(ngModel)]="participantFormulaire.nom">   
     </div>
 
     <div class="form-group">
         <label for="prenom">Prenom : </label>
-        <input type="text" id="prenom" name="prenom">     <!--                   [(ngModel)]="participantFormulaire.prenom"           -->   
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="participantFormulaire.prenom">
     </div>
 
     <div class="form-group">
         <label for="age">Age : </label>
-        <input type="text" id="age" name="age">     <!--                   [(ngModel)]="participantFormulaire.age"           -->   
+        <input type="text" id="age" name="age" [(ngModel)]="participantFormulaire.age"> 
     </div>
 
     <div class="form-group">
         <label for="email">Email : </label>
-        <input type="text" id="email" name="email">     <!--                   [(ngModel)]="participantFormulaire.age"           -->   
+        <input type="text" id="email" name="email" [(ngModel)]="participantFormulaire.email"> 
     </div>
 
     <div class="form-group">
         <label for="username">Username : </label>
-        <input type="text" id="username" name="username">     <!--                   [(ngModel)]="participantFormulaire.age"           -->   
+        <input type="text" id="username" name="username" [(ngModel)]="participantFormulaire.username">
     </div>
 
     <div class="form-group">
         <label for="password">Password: </label>
-        <input type="password" id="password" name="password">     <!--                   [(ngModel)]="participantFormulaire.age"           -->   
+        <input type="password" id="password" name="password" [(ngModel)]="participantFormulaire.password">
     </div>
 
     <button type="submit" class="btn btn-success">Valider</button>
@@ -72,11 +73,7 @@
 
     <tbody>
         <tr *ngFor="let participant of participants">
-            
-            <td><button class="btn btn-success">Afficher</button></td>
-
-            
- <!--          
+        
             <td>{{participant.id}}</td>
             <td>{{participant.nom}}</td>
             <td>{{participant.prenom}}</td>
@@ -85,11 +82,6 @@
             <td>{{participant.username}}</td>
             <td><button class="btn btn-warning" (click)="modifier(participant.id)">Modifier</button></td>
             <td><button class="btn btn-danger" (click)="enlever(participant.id)">Supprimer</button></td>
-
--->
-
-
-
 
         </tr>
     </tbody>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Formation } from 'src/app/models/Formation/formation';
 import { FormationService } from 'src/app/services/Formation/formation.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formation',
@@ -9,7 +10,7 @@ import { FormationService } from 'src/app/services/Formation/formation.service';
 })
 export class FormationComponent implements OnInit {
   
-  constructor(private formationService:FormationService) {}
+  constructor(private formationService:FormationService, private router:Router) {}
 
   formations!:Formation[];
   formationFormulaire!:Formation;
@@ -21,8 +22,6 @@ export class FormationComponent implements OnInit {
 
   }
 
-
-
   chercherAll() {
     this.formationService.chercherAll().subscribe(
       response => this.formations = response
@@ -31,7 +30,10 @@ export class FormationComponent implements OnInit {
 
   inserer() {
     this.formationService.inserer(this.formationFormulaire).subscribe(
-      response => this.chercherAll()
+      response => {
+        this.chercherAll();
+        this.formationFormulaire = new Formation;
+      }
     )
   }
 
@@ -47,7 +49,18 @@ export class FormationComponent implements OnInit {
     )
   }
 
+  resetFormulaire() {
+    this.formationFormulaire = new Formation;
+    window.location.reload();
+  }
 
+  afficherParticipants(id:number) {
+    this.router.navigateByUrl(`participants-par-formation/${id}`)
+  }
+
+  afficherPaiements(id:number) {
+    this.router.navigateByUrl(`paiements-par-formation/${id}`)
+  }
 
 
 

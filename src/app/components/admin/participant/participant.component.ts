@@ -23,8 +23,7 @@ export class ParticipantComponent implements OnInit {
 
   }
 
-
-
+  
   chercherAll() {
     this.participantService.chercherAll().subscribe(
       response => this.participants = response
@@ -33,7 +32,10 @@ export class ParticipantComponent implements OnInit {
 
   inserer() {
     this.participantService.inserer(this.participantFormulaire).subscribe(
-      response => this.chercherAll()
+      response => {
+        this.chercherAll();
+        this.participantFormulaire = new Participant;
+      }
     )
   }
 

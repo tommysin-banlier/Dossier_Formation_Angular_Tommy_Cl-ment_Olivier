@@ -31,7 +31,10 @@ export class FormateurComponent implements OnInit {
 
   inserer() {
     this.formateurService.inserer(this.formateurFormulaire).subscribe(
-      response => this.chercherAll()
+      response => {
+        this.chercherAll();
+        this.formateurFormulaire = new Formateur;
+      } 
     )
   }
 
