@@ -1,12 +1,12 @@
-
+<!--
 <form (ngSubmit)="inserer()">
     Date:<input type="datetime-local" name="date" [(ngModel)]="rdvFormulaire.date"><br>
-    <!--Personne:<input type="text" name="prenom" [(ngModel)]="cit.prenom"><br> !-->
+    <!--Personne:<input type="text" name="prenom" [(ngModel)]="cit.prenom"><br> 
     Personne:
     <select name="personne" [(ngModel)]="personne.id">
         <option *ngFor="let personne of personnes" value="{{personne.id}}">{{personne.nom}} {{personne.prenom}}</option>
     </select> <br>
-    <!--Commercial:<input type="text" name="age" [(ngModel)]="cit.age"><br>!-->
+    <!--Commercial:<input type="text" name="age" [(ngModel)]="cit.age"><br>
     Commercial:
     <select name="commercial" [(ngModel)]="commercial.id">
         <option *ngFor="let commercial of commercials" value="{{commercial.id}}">{{commercial.nom}} {{commercial.prenom}}</option>
@@ -28,8 +28,8 @@
     <tr *ngFor="let rdv of rdvs">
         <td>{{rdv.id}}</td>
         <td >{{rdv.date | datetime-local:'dd/mm/yyyy'T'HH:mm'}}</td>
-        <td><!-- {{rdv.personne.nom}} {{rdv.personne.prenom}}--></td>
-        <td ><!-- {{rdv.commercial.nom}} {{rdv.commercial.prenom}}--></td>
+        <td><!-- {{rdv.personne.nom}} {{rdv.personne.prenom}}</td>
+        <td ><!-- {{rdv.commercial.nom}} {{rdv.commercial.prenom}}</td>
         <td><button class="btn btn-warning" (click)="modifier(rdv.id)">Modifier</button></td>
         <td><button class="btn btn-danger" (click)="enlever(rdv.id)">Supprimer</button></td>
        
@@ -37,3 +37,9 @@
     </tr>
 
 </table>
+
+
+
+
+
+-->
