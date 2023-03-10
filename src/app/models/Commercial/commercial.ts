@@ -5,5 +5,6 @@ import { Utilisateur } from "../Utilisateur/utilisateur";
 export class Commercial extends Utilisateur {
     rdvsC!: Rdv[];
     commentaire!:string;
+    rdvC!:Rdv;
    
 }

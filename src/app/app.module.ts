@@ -27,6 +27,7 @@ import { CompteCommercialComponent } from './components/monCompte/compte-commerc
 import { CompteFormateurComponent } from './components/monCompte/compte-formateur/compte-formateur.component';
 import { CompteParticipantComponent } from './components/monCompte/compte-participant/compte-participant.component';
 import { CompteUtilisateurComponent } from './components/monCompte/compte-utilisateur/compte-utilisateur.component';
+import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { CompteUtilisateurComponent } from './components/monCompte/compte-utilis
     CompteCommercialComponent,
     CompteFormateurComponent,
     CompteParticipantComponent,
-    CompteUtilisateurComponent
+    CompteUtilisateurComponent,
+    UpgradeComponent
   ],
   imports: [
     BrowserModule,

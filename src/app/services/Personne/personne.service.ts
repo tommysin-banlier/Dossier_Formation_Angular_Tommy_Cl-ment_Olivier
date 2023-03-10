@@ -31,6 +31,12 @@ parId(id:number)
   return this.http.get<Personne>(`http://localhost:8015/api/personnes/${id}`);
 }
 
+upgradeUtilisateur(id:number)
+  {
+    return this.http.post(`http://localhost:8015/api/upgradeUtilisateur/${id}`,null);
+  }
+
+
 
 
 
