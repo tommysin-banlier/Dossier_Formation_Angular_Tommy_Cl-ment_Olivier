@@ -5,29 +5,33 @@
     </div>
 </div>
 
-<hr>
 
-<div class="row">
-    <div class="col">
-        <h3 style="margin-bottom : 20px">
-            Ajouter/Modifier
-        </h3>
+<div *ngIf="isModifying == true">
+    
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <h3 style="margin-bottom : 20px">
+                Ajouter/Modifier
+            </h3>
+        </div>
     </div>
+
+    <form (ngSubmit)="inserer()">
+
+        <input type="hidden" name="id" [(ngModel)]="paiementFormulaire.id">                                  
+
+        <div class="form-group">
+            <label for="montant">Montant : </label>
+            <input type="text" id="montant" name="montant" [(ngModel)]="paiementFormulaire.montant" >   
+        </div>
+
+        <button type="submit" class="btn btn-success">Valider</button>
+
+    </form>
+
 </div>
-
-<form (ngSubmit)="inserer()">
-
-    <input type="hidden" name="id" [(ngModel)]="paiementFormulaire.id">                                  
-
-    <div class="form-group">
-        <label for="montant">Montant : </label>
-        <input type="text" id="montant" name="montant" [(ngModel)]="paiementFormulaire.montant" >   
-    </div>
-
-    <button type="submit" class="btn btn-success">Valider</button>
-
-</form>
-
 
 <hr>
 
@@ -36,36 +40,25 @@
 
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Montant</th>
-            <th>Participant</th>
-            <th>Formation</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
+            <th scope="col">Id</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Participant</th>
+            <th scope="col">Formation</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
         </tr>
     </thead>
 
     <tbody>
         <tr *ngFor="let paiement of paiements">
-            
-
             <td>{{paiement.id}}</td>
-            <td>{{paiement.montant}}</td>
-            <td><!-- {{paiement.participant.nom}} {{paiement.participant.prenom}} --></td>
-            <td><!-- {{paiement.formation.nom}} --></td>
-
-
+            <td [ngStyle]="{'background-color': paiement.montant == 0 ?'#d0ffba' : '#ffbaba'}"><b>{{paiement.montant}}</b></td>
+            <td>{{paiement.participant.nom}} {{paiement.participant.prenom}}</td>
+            <td>{{paiement.formation.nom}}</td>
             <td><button class="btn btn-warning" (click)="modifier(paiement.id)">Modifier</button></td>
             <td><button class="btn btn-danger" (click)="enlever(paiement.id)">Supprimer</button></td>
-
-
-
         </tr>
     </tbody>
-
-
-
-
 
 </table>
 

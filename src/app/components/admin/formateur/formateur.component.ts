@@ -13,11 +13,14 @@ export class FormateurComponent implements OnInit {
 
   formateurs!:Formateur[];
   formateurFormulaire!:Formateur;
+  isModifying = false;
 
   ngOnInit(): void {
     
     this.chercherAll();
     this.formateurFormulaire = new Formateur;
+
+
 
   }
 
@@ -30,6 +33,7 @@ export class FormateurComponent implements OnInit {
   }
 
   inserer() {
+    this.isModifying = false;
     this.formateurService.inserer(this.formateurFormulaire).subscribe(
       response => {
         this.chercherAll();
@@ -45,6 +49,7 @@ export class FormateurComponent implements OnInit {
   }
 
   modifier(id:number) {
+    this.isModifying = true;
     this.formateurService.parId(id).subscribe(
       response => this.formateurFormulaire = response
     )
