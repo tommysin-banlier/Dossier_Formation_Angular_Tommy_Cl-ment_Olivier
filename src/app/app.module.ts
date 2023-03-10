@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { RoleComponent } from './components/admin/role/role.component';
 import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
 import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
+import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PaiementsParFormationComponent } from './components/paiements-par-forma
     HomeComponent,
     RoleComponent,
     ParticipantsParFormationComponent,
-    PaiementsParFormationComponent
+    PaiementsParFormationComponent,
+    UpgradeComponent
   ],
   imports: [
     BrowserModule,

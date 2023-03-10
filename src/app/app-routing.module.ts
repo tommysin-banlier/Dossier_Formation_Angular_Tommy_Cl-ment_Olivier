@@ -15,6 +15,7 @@ import { UtilisateurComponent } from './components/admin/utilisateur/utilisateur
 import { HomeComponent } from './components/home/home.component';
 import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
 import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
+import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 const ROUTES: Routes = [
 
@@ -33,7 +34,9 @@ const ROUTES: Routes = [
 
   {path:"adminRole", component:  RoleComponent},
   {path:"participants-par-formation/:id", component: ParticipantsParFormationComponent},
-  {path:"paiements-par-formation/:id", component: PaiementsParFormationComponent}
+  {path:"paiements-par-formation/:id", component: PaiementsParFormationComponent},
+  {path:"upgrade", component:  UpgradeComponent},
+
 
 
 
