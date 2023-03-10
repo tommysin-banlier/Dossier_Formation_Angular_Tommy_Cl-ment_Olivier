@@ -53,6 +53,23 @@ response => {
     )
   }
 
+  upgradeUtilisateur(id:number)
+  {let personne = new Personne;
+    this.personneService.parId(id).subscribe(
+      response => {
+        personne = response
+        console.log(personne)
+      }
+    )
+    this.personneService.upgradeUtilisateur(id).subscribe(
+      response => {
+        alert(`La personne ${personne.nom} ${personne.prenom} devient un utilisateur`);
+        this.chercherAll();
+        this.personneFormulaire = new Personne
+      }
+    );
+  }
+
 
 
 

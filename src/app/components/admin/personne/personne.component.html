@@ -50,6 +50,7 @@
             <td scope="col">Email</td>
             <td scope="col">Modifier</td>
             <td scope="col">Supprimer</td>
+            <td scope="col">UpgradeUtilisateur</td>
           </tr>
         </thead>
         <tbody>
@@ -61,6 +62,7 @@
                 <td>{{personne.email}}</td>                
                 <td><button (click)="modifier(personne.id)" class="btn btn-warning">Modifier</button></td>
                 <td><button (click)="enlever(personne.id)" class="btn btn-danger">Supprimer</button></td>
+                <td><button (click)="upgradeUtilisateur(personne.id)" class="btn btn-info">Upgrade</button></td>
             </tr>
         </tbody>
       </table>
