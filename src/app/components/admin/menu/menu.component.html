@@ -10,28 +10,47 @@
     risque de se perdre dans le app-routing.module.ts 
 -->
 
-<a [routerLink]="['/adminCommercial']">     adminCommercial </a>  <br>
-<a [routerLink]="['/adminFormateur']">      adminFormateur  </a>  <br>
-<a [routerLink]="['/adminFormation']">      adminFormation  </a>  <br>
-<a [routerLink]="['/adminHistorique']">     adminHistorique </a>  <br>
-<a [routerLink]="['/adminPaiement']">       adminPaiement   </a>  <br>
-<a [routerLink]="['/adminParticipant']">    adminParticipant</a>  <br>
-<a [routerLink]="['/adminPersonne']">       adminPersonne   </a>  <br>
-<a [routerLink]="['/adminRdv']">            adminRdv        </a>  <br>
-<a [routerLink]="['/adminUtilisateur']">    adminUtilisateur</a>  <br>
-<a [routerLink]="['/adminRole']">    adminRole</a>  <br>
+
+
+
+<a [routerLink]="['/admin/commercial']">     adminCommercial </a>  <br>
+<a [routerLink]="['/admin/formateur']">      adminFormateur  </a>  <br>
+<a [routerLink]="['/admin/formation']">      adminFormation  </a>  <br>
+<a [routerLink]="['/admin/historique']">     adminHistorique </a>  <br>
+<a [routerLink]="['/admin/paiement']">       adminPaiement   </a>  <br>
+<a [routerLink]="['/admin/participant']">    adminParticipant</a>  <br>
+<a [routerLink]="['/admin/personne']">       adminPersonne   </a>  <br>
+<a [routerLink]="['/admin/rdv']">            adminRdv        </a>  <br>
+<a [routerLink]="['/admin/utilisateur']">    adminUtilisateur</a>  <br>
+<a [routerLink]="['/admin/role']">           adminRole       </a>  <br>
 <a [routerLink]="['/upgrade']">    upgrade</a>  <br>
 
 
 
 
+<hr>
+<h3>(pour tester) Se connecter en tant que : </h3>
+
+<button class="btn btn-success" (click)="etreAdmin()">         Admin          </button> <br>
+<button class="btn btn-success" (click)="etreCommercial()">    Commercial     </button> <br>
+<button class="btn btn-success" (click)="etreFormateur()" >    Formateur      </button> <br>
+<button class="btn btn-success" (click)="etreParticipant()">   Participant    </button> <br>
+<button class="btn btn-success" (click)="etreUtilisateur()">   Utilisateur    </button> <br>
+
+<br>
 
 
+<h3>Vous êtes : </h3>
 
+<div [ngSwitch]="roleConnected">
+    <div *ngSwitchCase="'Administrateur'">      Administrateur       </div>
+    <div *ngSwitchCase="'Commercial'">  Commercial  </div>
+    <div *ngSwitchCase="'Formateur'">   Formateur   </div>
+    <div *ngSwitchCase="'Participant'"> Participant </div>
+    <div *ngSwitchCase="'Utilisateur'"> Utilisateur </div>
+</div>
 
-
-
-
+<a [routerLink]="['/mon-compte']">   infos Mon-compte   </a>  <br>
 
 
 

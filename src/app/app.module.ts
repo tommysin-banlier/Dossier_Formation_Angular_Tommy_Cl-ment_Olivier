@@ -22,6 +22,11 @@ import { FormsModule } from '@angular/forms';
 import { RoleComponent } from './components/admin/role/role.component';
 import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
 import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
+import { MonCompteComponent } from './components/monCompte/mon-compte/mon-compte.component';
+import { CompteCommercialComponent } from './components/monCompte/compte-commercial/compte-commercial.component';
+import { CompteFormateurComponent } from './components/monCompte/compte-formateur/compte-formateur.component';
+import { CompteParticipantComponent } from './components/monCompte/compte-participant/compte-participant.component';
+import { CompteUtilisateurComponent } from './components/monCompte/compte-utilisateur/compte-utilisateur.component';
 import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 
@@ -42,6 +47,11 @@ import { UpgradeComponent } from './components/upgrade/upgrade.component';
     RoleComponent,
     ParticipantsParFormationComponent,
     PaiementsParFormationComponent,
+    MonCompteComponent,
+    CompteCommercialComponent,
+    CompteFormateurComponent,
+    CompteParticipantComponent,
+    CompteUtilisateurComponent,
     UpgradeComponent
   ],
   imports: [

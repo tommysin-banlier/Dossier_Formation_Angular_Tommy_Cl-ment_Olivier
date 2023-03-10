@@ -1,3 +1,21 @@
+<head>
+    <!-- Script tableau triable avec recherche et affichage par nombre de ligne --> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <!-- Script execution selon l'id du tableau -->
+    <script>
+	$(document).ready(function(){
+	    $('#tableParticipant').dataTable();
+	});
+	</script>
+
+
+</head>
+
+
 
 <div class="row">
     <div class="col">
@@ -7,56 +25,58 @@
 
 <hr>
 
-<div class="row">
-    <div class="col">
-        <h3 style="margin-bottom : 20px">
-            Ajouter/Modifier
-        </h3>
+<div *ngIf="isModifying == true">
+
+    <div class="row">
+        <div class="col">
+            <h3 style="margin-bottom : 20px">
+                Ajouter/Modifier
+            </h3>
+        </div>
     </div>
+
+
+    <form (ngSubmit)="inserer()">                  
+
+        <div class="form-group">
+            <label for="nom">Nom : </label>
+            <input type="text" id="nom" name="nom" [(ngModel)]="participantFormulaire.nom">   
+        </div>
+
+        <div class="form-group">
+            <label for="prenom">Prenom : </label>
+            <input type="text" id="prenom" name="prenom" [(ngModel)]="participantFormulaire.prenom">
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age : </label>
+            <input type="text" id="age" name="age" [(ngModel)]="participantFormulaire.age"> 
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input type="text" id="email" name="email" [(ngModel)]="participantFormulaire.email"> 
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username : </label>
+            <input type="text" id="username" name="username" [(ngModel)]="participantFormulaire.username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" [(ngModel)]="participantFormulaire.password">
+        </div>
+
+        <button type="submit" class="btn btn-success">Valider</button>
+
+    </form>
+
+    <hr>
+
 </div>
 
-
-<form (ngSubmit)="inserer()">                  
-
-    <div class="form-group">
-        <label for="nom">Nom : </label>
-        <input type="text" id="nom" name="nom" [(ngModel)]="participantFormulaire.nom">   
-    </div>
-
-    <div class="form-group">
-        <label for="prenom">Prenom : </label>
-        <input type="text" id="prenom" name="prenom" [(ngModel)]="participantFormulaire.prenom">
-    </div>
-
-    <div class="form-group">
-        <label for="age">Age : </label>
-        <input type="text" id="age" name="age" [(ngModel)]="participantFormulaire.age"> 
-    </div>
-
-    <div class="form-group">
-        <label for="email">Email : </label>
-        <input type="text" id="email" name="email" [(ngModel)]="participantFormulaire.email"> 
-    </div>
-
-    <div class="form-group">
-        <label for="username">Username : </label>
-        <input type="text" id="username" name="username" [(ngModel)]="participantFormulaire.username">
-    </div>
-
-    <div class="form-group">
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" [(ngModel)]="participantFormulaire.password">
-    </div>
-
-    <button type="submit" class="btn btn-success">Valider</button>
-
-</form>
-
-
-<hr>
-
-
-<table class="table table-striped table-bordered text-center">
+<table id="tableParticipant" class="table table-striped table-bordered text-center">
 
     <thead>
         <tr>
@@ -85,10 +105,6 @@
 
         </tr>
     </tbody>
-
-
-
-
 
 </table>
 

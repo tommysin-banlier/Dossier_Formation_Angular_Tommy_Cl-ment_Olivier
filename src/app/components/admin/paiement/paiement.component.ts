@@ -13,12 +13,15 @@ export class PaiementComponent implements OnInit {
 
   paiements!:Paiement[];
   paiementFormulaire!:Paiement;
+  isModifying = false;
 
   ngOnInit(): void {
     
     this.chercherAll();
     this.paiementFormulaire = new Paiement;
     
+
+
   }
 
 
@@ -30,6 +33,7 @@ export class PaiementComponent implements OnInit {
   }
 
   inserer() {
+    this.isModifying = false;
     this.paiementService.inserer(this.paiementFormulaire).subscribe(
       response => {
         this.chercherAll();
@@ -45,6 +49,7 @@ export class PaiementComponent implements OnInit {
   }
 
   modifier(id:number) {
+    this.isModifying = true;
     this.paiementService.parId(id).subscribe(
       response => this.paiementFormulaire = response
     )

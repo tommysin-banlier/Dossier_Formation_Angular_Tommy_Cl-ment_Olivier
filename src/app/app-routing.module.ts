@@ -13,31 +13,32 @@ import { RdvComponent } from './components/admin/rdv/rdv.component';
 import { RoleComponent } from './components/admin/role/role.component';
 import { UtilisateurComponent } from './components/admin/utilisateur/utilisateur.component';
 import { HomeComponent } from './components/home/home.component';
+import { MonCompteComponent } from './components/monCompte/mon-compte/mon-compte.component';
 import { PaiementsParFormationComponent } from './components/paiements-par-formation/paiements-par-formation.component';
 import { ParticipantsParFormationComponent } from './components/participants-par-formation/participants-par-formation.component';
 import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 const ROUTES: Routes = [
 
-  {path:"adminMenu",        component:  MenuComponent},
-  {path:"adminCommercial",  component:  CommercialComponent},
-  {path:"adminFormateur",   component:  FormateurComponent},
-  {path:"adminFormation",   component:  FormationComponent},
-  {path:"adminHistorique",  component:  HistoriqueComponent},
-  {path:"adminPaiement",    component:  PaiementComponent},
-  {path:"adminParticipant", component:  ParticipantComponent},
-  {path:"adminPersonne",    component:  PersonneComponent},
-  {path:"adminRdv",         component:  RdvComponent},
-  {path:"adminUtilisateur", component:  UtilisateurComponent},
+  {path:"admin/menu",        component:  MenuComponent},
+  {path:"admin/commercial",  component:  CommercialComponent},
+  {path:"admin/formateur",   component:  FormateurComponent},
+  {path:"admin/formation",   component:  FormationComponent},
+  {path:"admin/historique",  component:  HistoriqueComponent},
+  {path:"admin/paiement",    component:  PaiementComponent},
+  {path:"admin/participant", component:  ParticipantComponent},
+  {path:"admin/personne",    component:  PersonneComponent},
+  {path:"admin/rdv",         component:  RdvComponent},
+  {path:"admin/utilisateur", component:  UtilisateurComponent},
 
  /* {path:"commercial-rdv", component: }*/
 
-  {path:"adminRole", component:  RoleComponent},
-  {path:"participants-par-formation/:id", component: ParticipantsParFormationComponent},
-  {path:"paiements-par-formation/:id", component: PaiementsParFormationComponent},
+
+  {path:"admin/role",        component:  RoleComponent},
+  {path:"participants-par-formation/:id",component: ParticipantsParFormationComponent},
+  {path:"paiements-par-formation/:id",   component: PaiementsParFormationComponent},
+  {path:"mon-compte",        component:  MonCompteComponent},
   {path:"upgrade", component:  UpgradeComponent},
-
-
 
 
 

@@ -13,6 +13,7 @@ export class ParticipantComponent implements OnInit {
   
   participants!:Participant[];
   participantFormulaire!:Participant;
+  isModifying = false;
   
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class ParticipantComponent implements OnInit {
   }
 
   inserer() {
+    this.isModifying = false;
     this.participantService.inserer(this.participantFormulaire).subscribe(
       response => {
         this.chercherAll();
@@ -46,6 +48,7 @@ export class ParticipantComponent implements OnInit {
   }
 
   modifier(id:number) {
+    this.isModifying = true;
     this.participantService.parId(id).subscribe(
       response => this.participantFormulaire = response
     )
