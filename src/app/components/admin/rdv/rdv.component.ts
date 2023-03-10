@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Commercial } from 'src/app/models/Commercial/commercial';
 import { Personne } from 'src/app/models/Personne/personne';
 import { Rdv } from 'src/app/models/RDV/rdv';
+import { CommercialService } from 'src/app/services/Commercial/commercial.service';
+import { PersonneService } from 'src/app/services/Personne/personne.service';
 import { RdvService } from 'src/app/services/RDV/rdv.service';
 
 @Component({
@@ -16,14 +18,21 @@ export class RdvComponent implements OnInit {
   rdvFormulaire!:Rdv;
   personne!:Personne;
   commercial!:Commercial;
+  personnes!:Personne[];
+  commercials!:Commercial[];
+  idcommercial!:number;
+  idpersonne!:number;
 
   ngOnInit()
   {
-    this.chercherAll();
+    
     this.rdvFormulaire=new Rdv;
+    this.chercherAll();
+    this.chercherAllCommercial();
+    this.chercherAllPersonne();
   }
 
-  constructor(private rdvService:RdvService, private router:Router)
+  constructor(private rdvService:RdvService, private router:Router, private commercialService:CommercialService, private personneService:PersonneService )
 {
 
 }
@@ -36,12 +45,40 @@ export class RdvComponent implements OnInit {
   }
 
 
-  inserer()
+ /* inserer()
   {
     this.rdvService.inserer(this.rdvFormulaire).subscribe(
       response=>this.chercherAll()
     )
-  }
+  }*/
+
+  inserer()
+{
+
+      let commercial:Commercial=new Commercial();
+      let personne:Personne=new Personne();
+      
+      this.commercialService.parId(this.idcommercial).subscribe(
+        response=>
+        {commercial=response;
+      this.rdvFormulaire.commercial=commercial;
+      this.rdvService.inserer(this.rdvFormulaire).subscribe(
+      );
+        }
+      )
+
+      this.personneService.parId(this.idpersonne).subscribe(
+        response=>
+        {
+          personne=response;
+          this.rdvFormulaire.personne=personne;
+          this.rdvService.inserer(this.rdvFormulaire).subscribe(
+           );
+        }
+      )
+     
+
+    };
 
   enlever(id:number)
   {
@@ -49,13 +86,24 @@ export class RdvComponent implements OnInit {
     );
   }
 
-
-  
-
   modifier(id:number)
   {
     this.rdvService.parId(id).subscribe(
       response=> this.rdvFormulaire=response
+    )
+  }
+
+  chercherAllCommercial()
+  {
+    this.commercialService.chercherAll().subscribe(
+      response=>this.commercials=response
+    );
+  }
+
+  chercherAllPersonne()
+  {
+    this.personneService.chercherAll().subscribe(
+      response=>this.personnes=response
     )
   }
 
