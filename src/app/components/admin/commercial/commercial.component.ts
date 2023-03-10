@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Commercial } from 'src/app/models/Commercial/commercial';
 import { Rdv } from 'src/app/models/RDV/rdv';
 import { CommercialService } from 'src/app/services/Commercial/commercial.service';
+import { RdvService } from 'src/app/services/RDV/rdv.service';
 
 @Component({
   selector: 'app-commercial',
@@ -15,18 +16,20 @@ commercials!:Commercial[];
 commercialFormulaire!:Commercial;
 commercial!:Commercial;
 idrdv!: number;
-rdvs!:Rdv[];
-rdv!:Rdv;
+rdvsC!:Rdv[];
+rdvC!:Rdv;
+
 
 
 
 ngOnInit()
   {
-    this.chercherAll();
+    
     this.commercialFormulaire=new Commercial;
+    this.chercherAll();
   }
 
-  constructor(private commercialService:CommercialService, private router:Router)
+  constructor(private commercialService:CommercialService, private router:Router, private rdvService:RdvService)
 {
 
 }
@@ -41,24 +44,27 @@ ngOnInit()
 
   inserer()
   {
-    this.commercialService.inserer(this.commercialFormulaire).subscribe(
+    /*this.commercialService.inserer(this.commercialFormulaire).subscribe(
       response=>this.chercherAll()
-    )
-    /*
+    )*/
 
-    //let rdv:Rdv=new Rdv();
-
-      this.commercialService.parId(this.idrdv).subscribe(
+    let rdv:Rdv=new Rdv();
+      
+      this.rdvService.parId(this.idrdv).subscribe(
         response=>
-        {
-          //rdv=response;
-      this.commercial.rdvs=rdv;
-      this.commercialService.inserer(this.rdv).subscribe(
+        {rdv=response;
+      this.commercialFormulaire.rdvC=rdv;
+      this.commercialService.inserer(this.commercialFormulaire).subscribe(
         response=>this.chercherAll()
-      }
-      )*/
+      );
+        }
+      )
 
   }
+
+
+
+
 
   enlever(id:number)
   {
