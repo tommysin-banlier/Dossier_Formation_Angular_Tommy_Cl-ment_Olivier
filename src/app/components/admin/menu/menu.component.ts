@@ -26,6 +26,7 @@ export class MenuComponent implements OnInit {
     formateurLocal!:Formateur;
     participantLocal!:Participant;
     roleConnected!:string;
+    idConnected!:number;
 
 
   ngOnInit(): void {
@@ -68,28 +69,36 @@ export class MenuComponent implements OnInit {
   }
 
   etreFormateur() {
-    this.roleConnected = "Formateur"
+    this.roleConnected = "Formateur";
     sessionStorage.setItem("roleConnected", this.roleConnected);
+    this.idConnected = 4;
+    sessionStorage.setItem("idConnected", String(this.idConnected) );
   }
 
   etreCommercial() {
-    this.roleConnected = "Commercial"
+    this.roleConnected = "Commercial";
     sessionStorage.setItem("roleConnected", this.roleConnected);
+    this.idConnected = 8;
+    sessionStorage.setItem("idConnected", String(this.idConnected) );
   }
 
   etreAdmin() {
-    this.roleConnected = "Administrateur"
+    this.roleConnected = "Administrateur";
     sessionStorage.setItem("roleConnected", this.roleConnected);
   }
 
   etreParticipant() {
-    this.roleConnected = "Participant"
+    this.roleConnected = "Participant";
     sessionStorage.setItem("roleConnected", this.roleConnected);
+    this.idConnected = 3;
+    sessionStorage.setItem("idConnected", String(this.idConnected) );
   }
 
   etreUtilisateur() {
-    this.roleConnected = "Utilisateur"
+    this.roleConnected = "Utilisateur";
     sessionStorage.setItem("roleConnected", this.roleConnected);
+    this.idConnected = 2;
+    sessionStorage.setItem("idConnected", String(this.idConnected) );
   }
 
 

@@ -1,1 +1,65 @@
-<p>compte-participant works!</p>
+<hr>
+
+<h2>Vos informations personnelles</h2>
+
+
+<form (ngSubmit)="inserer()" class="form-group mx-sm-3 mb-2">
+
+    <table class="table">
+        <tr>
+            <td><label name="nom">Nom:</label></td>
+            <td><input type="text" name="nom" [(ngModel)]="participantFormulaire.nom"></td>
+            <td><label name="prenom">Prenom:</label></td>
+            <td><input type="text" name="prenom" [(ngModel)]="participantFormulaire.prenom"></td>
+        </tr>
+        <tr>
+            <td><label name="age">Age:</label></td>
+            <td><input type="text" name="age" [(ngModel)]="participantFormulaire.age"></td>
+            <td><label name="email">Email:</label></td>
+            <td><input type="text" name="email" [(ngModel)]="participantFormulaire.email"></td>
+        </tr>
+        <tr>
+            <td><button type="submit" class="btn btn-info">Valider</button></td>
+        </tr>
+    </table>
+
+</form>
+
+<hr>
+
+<h2>Vos formations : </h2>
+
+
+<table class="table table-striped table-bordered text-center">
+
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Début</th>
+            <th scope="col">Fin</th>
+            <th scope="col">Formateur</th>
+            <th scope="col">Reste à payer</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let formation of formations">
+            
+            <td>{{formation.nom}}</td>
+            <td>{{formation.prix}}</td>
+            <td>{{formation.dateDebut}}</td>
+            <td>{{formation.dateFin}}</td>
+            <td>{{formation.formateur.nom}}</td>
+
+
+           <td>  {{  paiementParFormationParParticipant(formation.id, participantFormulaire.id) }}      </td>         
+
+        </tr>
+    </tbody>
+
+</table>
+
+
+
