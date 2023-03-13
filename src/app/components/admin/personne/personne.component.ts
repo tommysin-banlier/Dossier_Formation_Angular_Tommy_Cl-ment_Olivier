@@ -59,7 +59,8 @@ export class PersonneComponent implements OnInit {
     )
     this.personneService.upgradeUtilisateur(id).subscribe(
       response => {
-        alert(`La personne ${personne.nom} ${personne.prenom} devient un utilisateur`);
+        //alert(`La personne ${personne.nom} ${personne.prenom} devient un utilisateur`);
+        alert(`La personne choisis devient un utilisateur`);
         this.chercherAll();
         this.personneFormulaire = new Personne;
       }
