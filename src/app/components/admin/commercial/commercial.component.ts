@@ -17,7 +17,7 @@ commercialFormulaire!:Commercial;
 commercial!:Commercial;
 idrdv!: number;
 rdvsC!:Rdv[];
-rdvC!:Rdv;
+rdvco!:Rdv;
 
 
 
@@ -27,6 +27,7 @@ ngOnInit()
     
     this.commercialFormulaire=new Commercial;
     this.chercherAll();
+    this.ChercherAllRdv();
   }
 
   constructor(private commercialService:CommercialService, private router:Router, private rdvService:RdvService)
@@ -48,12 +49,12 @@ ngOnInit()
       response=>this.chercherAll()
     )*/
 
-    let rdv:Rdv=new Rdv();
+    let rdvco:Rdv=new Rdv();
       
       this.rdvService.parId(this.idrdv).subscribe(
         response=>
-        {rdv=response;
-      this.commercialFormulaire.rdvC=rdv;
+        {this.rdvco=response;
+      this.commercialFormulaire.rdvC=rdvco;
       this.commercialService.inserer(this.commercialFormulaire).subscribe(
         response=>this.chercherAll()
       );
@@ -79,6 +80,13 @@ ngOnInit()
   {
     this.commercialService.parId(id).subscribe(
       response=> this.commercialFormulaire=response
+    )
+  }
+
+  ChercherAllRdv()
+  {
+    this.rdvService.chercherAll().subscribe(
+      response=>this.rdvsC=response
     )
   }
 
