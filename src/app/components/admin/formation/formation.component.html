@@ -67,7 +67,6 @@
     <tbody>
         <tr *ngFor="let formation of formations">
             
-
             <td>{{formation.id}}</td>
             <td>{{formation.nom}}</td>
             <td>{{formation.prix}}</td>
@@ -75,21 +74,13 @@
             <td>{{formation.dateFin}}</td>
             <td>{{formation.formateur.nom}}</td>
 
-<!-- To do-->            
             <td>            <button class="btn btn-secondary" (click)="afficherParticipants(formation.id)" >Afficher</button>               </td>
             <td>            <button class="btn btn-secondary" (click)="afficherPaiements(formation.id)" >Afficher</button>                </td>
-<!--/To do--> 
 
             <td><button class="btn btn-warning" (click)="modifier(formation.id)">Modifier</button></td>
             <td><button class="btn btn-danger" (click)="enlever(formation.id)">Supprimer</button></td>
 
-
-
         </tr>
     </tbody>
-
-
-
-
 
 </table>

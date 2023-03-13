@@ -37,7 +37,7 @@ const ROUTES: Routes = [
   {path:"admin/role",        component:  RoleComponent},
   {path:"participants-par-formation/:id",component: ParticipantsParFormationComponent},
   {path:"paiements-par-formation/:id",   component: PaiementsParFormationComponent},
-  {path:"mon-compte",        component:  MonCompteComponent},
+  {path:"mon-compte/:id",        component:  MonCompteComponent},
   {path:"upgrade", component:  UpgradeComponent},
 
 

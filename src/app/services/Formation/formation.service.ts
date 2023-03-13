@@ -41,5 +41,10 @@ export class FormationService {
   }
 
 
+  parParticipant(id:number) {
+    return this.http.get<Formation[]>(`http://localhost:8015/api/formations/participant/${id}`)
+  }
+
+
 
 }

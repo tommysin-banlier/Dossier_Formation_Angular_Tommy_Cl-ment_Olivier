@@ -48,6 +48,11 @@ export class PaiementService {
   }
 
 
+  parFormationParParticipant(idFormation:number, idParticipant:number) {
+
+    return this.http.get<Paiement>(`http://localhost:8015/api/paiements/formation/${idFormation}/participant/${idParticipant}`)
+
+  }
 
 
 
