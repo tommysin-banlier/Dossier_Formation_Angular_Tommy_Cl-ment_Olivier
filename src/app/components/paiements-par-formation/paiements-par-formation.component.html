@@ -25,15 +25,15 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let paiement of paiements">
+      <tr *ngFor="let paiement of paiements">
             <td>{{paiement.id}}</td>
             <td [ngStyle]="{'background-color': paiement.montant == 0 ?'#d0ffba' : '#ffbaba'}"><b>{{paiement.montant}}</b></td>
             <td>{{paiement.participant.nom}} {{paiement.participant.prenom}}</td>
             <td>{{paiement.formation.nom}}</td>
-<!--         
+<!--        
             <td><button class="btn btn-warning" (click)="modifier(paiement.id)">Modifier</button></td>
             <td><button class="btn btn-danger" (click)="enlever(paiement.id)">Supprimer</button></td>
--->            
+ -->          
         </tr>
     </tbody>
 
