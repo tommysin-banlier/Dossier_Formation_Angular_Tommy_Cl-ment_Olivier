@@ -4,7 +4,7 @@
 
 
 <div [ngSwitch]="roleConnected">
-    <div *ngSwitchCase="'Administrateur'">      <app-menu></app-menu>     </div>
+    <div *ngSwitchCase="'Admin'">      <app-menu></app-menu>     </div>
     <div *ngSwitchCase="'Commercial'">  <app-compte-commercial></app-compte-commercial>   </div>
     <div *ngSwitchCase="'Formateur'">   <app-compte-formateur></app-compte-formateur>  </div>
     <div *ngSwitchCase="'Participant'"> <app-compte-participant></app-compte-participant> </div>
