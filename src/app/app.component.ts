@@ -27,6 +27,12 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl(`mon-compte/${id}`);
   }
 
+  logout()
+  {
+    sessionStorage.clear();
+    this.router.navigateByUrl(`login`);
+  }
+
 
 
 
