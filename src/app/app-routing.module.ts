@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth.guard';
 import { CommercialComponent } from './components/admin/commercial/commercial.component';
 import { FormateurComponent } from './components/admin/formateur/formateur.component';
 import { FormationComponent } from './components/admin/formation/formation.component';
@@ -21,26 +22,26 @@ import { UpgradeComponent } from './components/upgrade/upgrade.component';
 
 const ROUTES: Routes = [
 
-  {path:"admin/menu",        component:  MenuComponent},
-  {path:"admin/commercial",  component:  CommercialComponent},
-  {path:"admin/formateur",   component:  FormateurComponent},
-  {path:"admin/formation",   component:  FormationComponent},
-  {path:"admin/historique",  component:  HistoriqueComponent},
-  {path:"admin/paiement",    component:  PaiementComponent},
-  {path:"admin/participant", component:  ParticipantComponent},
-  {path:"admin/personne",    component:  PersonneComponent},
-  {path:"admin/rdv",         component:  RdvComponent},
-  {path:"admin/utilisateur", component:  UtilisateurComponent},
+  {path:"admin/menu",        component:  MenuComponent, canActivate:[AuthGuard]},
+  {path:"admin/commercial",  component:  CommercialComponent, canActivate:[AuthGuard]},
+  {path:"admin/formateur",   component:  FormateurComponent, canActivate:[AuthGuard]},
+  {path:"admin/formation",   component:  FormationComponent, canActivate:[AuthGuard]},
+  {path:"admin/historique",  component:  HistoriqueComponent, canActivate:[AuthGuard]},
+  {path:"admin/paiement",    component:  PaiementComponent, canActivate:[AuthGuard]},
+  {path:"admin/participant", component:  ParticipantComponent, canActivate:[AuthGuard]},
+  {path:"admin/personne",    component:  PersonneComponent, canActivate:[AuthGuard]},
+  {path:"admin/rdv",         component:  RdvComponent, canActivate:[AuthGuard]},
+  {path:"admin/utilisateur", component:  UtilisateurComponent, canActivate:[AuthGuard]},
   {path:"login", component:LoginComponent},
 
  /* {path:"commercial-rdv", component: }*/
 
 
-  {path:"admin/role",        component:  RoleComponent},
-  {path:"participants-par-formation/:id",component: ParticipantsParFormationComponent},
-  {path:"paiements-par-formation/:id",   component: PaiementsParFormationComponent},
-  {path:"mon-compte/:id",        component:  MonCompteComponent},
-  {path:"upgrade", component:  UpgradeComponent},
+  {path:"admin/role", component:  RoleComponent, canActivate:[AuthGuard]},
+  {path:"participants-par-formation/:id", component: ParticipantsParFormationComponent, canActivate:[AuthGuard]},
+  {path:"paiements-par-formation/:id", component: PaiementsParFormationComponent, canActivate:[AuthGuard]},
+  {path:"mon-compte/:id", component:  MonCompteComponent, canActivate:[AuthGuard]},
+  {path:"upgrade", component:  UpgradeComponent, canActivate:[AuthGuard]},
 
 
 

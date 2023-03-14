@@ -29,6 +29,7 @@ import { CompteParticipantComponent } from './components/monCompte/compte-partic
 import { CompteUtilisateurComponent } from './components/monCompte/compte-utilisateur/compte-utilisateur.component';
 import { UpgradeComponent } from './components/upgrade/upgrade.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthentificationInterceptor } from './authentification.interceptor';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
  
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthentificationInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

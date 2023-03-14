@@ -36,7 +36,11 @@ constructor(private service:UtilisateurService, private router:Router)
         //sessionStorage.setItem("basicAuth",basicAuth);
         
         //ici ajouter informatio à utiliser, ajouter déconnexion, ajouter et stocker info de l'username a ayant l'autorisation
-        sessionStorage.setItem('token','Bearer '+response.jwt)
+        sessionStorage.setItem('token','Bearer '+response.jwt);
+
+        //appel de la fonction pour insérer username + sessionStorage.setItem
+
+
         //this.router.navigateByUrl('afficherPersonnes');
 
       },
