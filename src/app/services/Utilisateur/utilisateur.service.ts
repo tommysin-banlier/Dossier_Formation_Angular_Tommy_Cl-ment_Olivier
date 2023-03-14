@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Utilisateur } from 'src/app/models/Utilisateur/utilisateur';
+import { AuthentificationRequest } from 'src/app/models/authentification-request';
+import { AuthentificationResponse } from 'src/app/models/authentification-response';
 
 
 @Injectable({
@@ -47,7 +49,10 @@ export class UtilisateurService {
   }
 
 
-
+  authentification(authentificationRequest:AuthentificationRequest)
+  {
+    return this.http.post<AuthentificationResponse>('http://localhost:8015/api/loginUserJwt',authentificationRequest);
+  }
 
 
 

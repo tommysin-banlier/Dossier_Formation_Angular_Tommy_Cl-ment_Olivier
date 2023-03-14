@@ -28,6 +28,7 @@ import { CompteFormateurComponent } from './components/monCompte/compte-formateu
 import { CompteParticipantComponent } from './components/monCompte/compte-participant/compte-participant.component';
 import { CompteUtilisateurComponent } from './components/monCompte/compte-utilisateur/compte-utilisateur.component';
 import { UpgradeComponent } from './components/upgrade/upgrade.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { UpgradeComponent } from './components/upgrade/upgrade.component';
     CompteFormateurComponent,
     CompteParticipantComponent,
     CompteUtilisateurComponent,
-    UpgradeComponent
+    UpgradeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
