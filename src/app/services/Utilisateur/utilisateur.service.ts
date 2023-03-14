@@ -35,6 +35,11 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(`http://localhost:8015/api/utilisateurs/${id}`);
   }
 
+  parUsername(username:string)
+  {
+    return this.http.get<Utilisateur>(`http://localhost:8015/api/utilisateursUsername/${username}`)
+  }
+
   upgradeParticipant(id:number)
   {
     return this.http.post(`http://localhost:8015/api/upgradeParticipant/${id}`,null);
@@ -49,6 +54,8 @@ export class UtilisateurService {
   {
     return this.http.post(`http://localhost:8015/api/upgradeFormateur/${id}`,null);
   }
+
+
 
 //Partie Authentification service (le mieux à mettre dans une autre classe service)
   authentification(authentificationRequest:AuthentificationRequest)

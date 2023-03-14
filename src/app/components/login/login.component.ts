@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthentificationRequest } from 'src/app/models/authentification-request';
+import { Utilisateur } from 'src/app/models/Utilisateur/utilisateur';
 import { UtilisateurService } from 'src/app/services/Utilisateur/utilisateur.service';
 
 
@@ -16,7 +17,8 @@ constructor(private service:UtilisateurService, private router:Router)
 {}
 
   username!: string;
-  password!:string
+  password!:string;
+  usernom!:Utilisateur;
 
   ngOnInit(): void{
 
@@ -37,10 +39,19 @@ constructor(private service:UtilisateurService, private router:Router)
         
         //ici ajouter informatio à utiliser, ajouter déconnexion, ajouter et stocker info de l'username a ayant l'autorisation
         sessionStorage.setItem('token','Bearer '+response.jwt);
+        sessionStorage.setItem('username',ar.username);
 
         //appel de la fonction pour insérer username + sessionStorage.setItem
+       this.service.parUsername(ar.username).subscribe(
+        response=>
+        {
+          console.log(response);
+          this.usernom=response;
+          sessionStorage.setItem('roleConnected',this.usernom.role.nom);
+       console.log(this.usernom.role.nom);
 
-
+        })
+       
         //this.router.navigateByUrl('afficherPersonnes');
 
       },
